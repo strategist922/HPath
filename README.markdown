@@ -1,4 +1,4 @@
-# HPATH
+# HPath
 
 ### Introduction
 
