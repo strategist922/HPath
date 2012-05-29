@@ -11,3 +11,5 @@ Executing XPath queries over Hadoop.
 * [XML Query Opmization in Map-Reduce: Presentation at WebDB'11](//lambda.uta.edu/webdb11-talk.pdf)
 
 * [Mahout XMLInputFormat](https://github.com/apache/mahout/blob/trunk/examples/src/main/java/org/apache/mahout/classifier/bayes/XmlInputFormat.java)
+
+* [Wiki Page Rank with XMLInputFormat](http://blog.xebia.com/2011/09/27/wiki-pagerank-with-hadoop/)
