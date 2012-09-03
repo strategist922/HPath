@@ -1,6 +1,7 @@
 package br.ufpr.inf.hpath;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
@@ -12,7 +13,7 @@ import org.xml.sax.SAXException;
 public class HPath {
 	
 	public static int returnIndex(String toIndex) {
-		String[] commands = {"quit","load",""};
+		String[] commands = {"", "quit", "help", "load", "saveto", "list"};
 		for (int i=0; i<commands.length; i++) {  
 	        if (toIndex.equals(commands[i] ) )   
 	            return i;  
@@ -30,7 +31,9 @@ public class HPath {
       throws XPathExpressionException, ParserConfigurationException, SAXException, IOException {
       Executor executor = new Executor();
       Integer keepGoing = 1;
-      String xmlFileName = new String();
+      String inputFileName = new String();
+      String outputFileName = new String();
+      double startTime;
       
       do {
          System.out.print("hpath >> ");
@@ -39,22 +42,61 @@ public class HPath {
             String[] commands;
          	commands = buffer.readLine().split(" ");
          	switch (returnIndex(commands[0])) {  
-	         	case 0 : keepGoing = 0; break;
-	         	case 1 : 
-	         		System.out.print("File name: ");
-	             	xmlFileName = buffer.readLine();
-	             	System.out.println(" @ " + xmlFileName);
-	         	case 2 : break;
+	         	case 0 : // do nothing 
+	         		break;	
+	         	case 1 : // quit 
+	         		keepGoing = 0; 
+	         		break;
+	         	case 2 : // help
+	         		System.out.println("help \t- Show this help menu.");
+	         		System.out.println("quit \t- Quit hpath-cli.");
+	         		System.out.println("load \t- load input file.");
+	         		System.out.println("saveto \t- load input file.");
+	         		System.out.println("/xpath \t- XPath query. Type your query direct in the cli.");
+
+	         		// System.out.println("list - list current files in use.");
+	         		break;
+	         	case 3 : // set input file
+	         		System.out.print("XML file path: ");
+	             	inputFileName = buffer.readLine();
+	             	File in = new File(inputFileName);
+	             	if (in.exists())
+	             		System.out.println(" @ " + inputFileName);
+	             	else
+	             		System.out.println(" File not found.");
+	             	break;
+	         	case 4 : // set output file
+	         		System.out.print("Save to: ");
+	             	outputFileName = buffer.readLine();
+	             	File out = new File(outputFileName);
+	             	if (out.exists())
+	             		System.out.println(" This file already exists.");
+	             	else
+	             		System.out.println(" # " + outputFileName);
+	             	break;
+	             	
+	         	case 5 : // list
+	         		System.out.println(" This feature is not enabled.");
+	         		break;
 	         	default: 
-	         		if (xmlFileName.isEmpty()) {
+	         		if (inputFileName.isEmpty()) {
 	         			System.out.println(" *** You need to select a XML file. Try 'load'. ");
 	         		} else {
-	         			executor.runQuery(commands[0], xmlFileName);
+	         			startTime = (double)System.nanoTime();
+		         		if (inputFileName.isEmpty())
+		         			executor.runQuery(commands[0], inputFileName, outputFileName);
+		         		else
+		         			executor.runQuery(commands[0], inputFileName, "output/result");
+		         		startTime = ((double)System.nanoTime() - startTime) / 1000000000.0;
+		         		System.out.println("Hey, it took " + startTime + " seconds to run.");
 	         		}
          	}  
          } catch (IOException ioe) {
          	System.out.println("Error: " + ioe.getMessage());
-         }
+         } catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
       } while (keepGoing.equals(1)); 
       System.out.println("Bye.");
    }
