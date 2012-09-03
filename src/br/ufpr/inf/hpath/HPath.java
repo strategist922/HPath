@@ -53,7 +53,6 @@ public class HPath {
 	         		System.out.println("load \t- load input file.");
 	         		System.out.println("saveto \t- load input file.");
 	         		System.out.println("/xpath \t- XPath query. Type your query direct in the cli.");
-
 	         		// System.out.println("list - list current files in use.");
 	         		break;
 	         	case 3 : // set input file
@@ -96,7 +95,6 @@ public class HPath {
          } catch (IOException ioe) {
          	System.out.println("Error: " + ioe.getMessage());
          } catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
       } while (keepGoing.equals(1)); 
