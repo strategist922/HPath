@@ -43,8 +43,6 @@ public class Executor {
 	public static class Map extends
 			Mapper<LongWritable, Text, Text, IntWritable> {
 		private final static IntWritable one = new IntWritable(1);
-//		private static Integer begin = 0;
-//		private static Integer end = 0;
 		private Text word = new Text();
 		private Text tmp = new Text();
 
@@ -61,18 +59,6 @@ public class Executor {
 				tmp.set(value.toString().substring(begin + 1));
 				context.write(value, one);
 			} 
-				
-//			while (tokenizer.hasMoreTokens()) {
-//				word.set(tokenizer.nextToken());
-//				
-//				if (word.toString().matches("(?i).*<.*>.*")
-//						|| word.toString().matches("(?i).*</.*>.*")) {
-//					begin = word.toString().indexOf("<");
-//					end = word.toString().indexOf(">");
-//					word.set(word.toString().substring(begin, end + 1));
-//					context.write(value, one);
-//				}
-//			}
 		}
 	}
 	
