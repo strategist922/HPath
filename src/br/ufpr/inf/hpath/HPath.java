@@ -83,10 +83,12 @@ public class HPath {
 	         			System.out.println(" *** You need to select a XML file. Try 'load'. ");
 	         		} else {
 	         			startTime = (double)System.nanoTime();
-		         		if (inputFileName.isEmpty())
-		         			executor.runQuery(commands[0], inputFileName, outputFileName);
-		         		else
+		         		if (outputFileName.isEmpty())
 		         			executor.runQuery(commands[0], inputFileName, "output/result");
+		         		else
+		         			executor.runQuery(commands[0], inputFileName, outputFileName);
+		         		
+	         			System.out.println(" @ " + inputFileName);
 		         		startTime = ((double)System.nanoTime() - startTime) / 1000000000.0;
 		         		System.out.println("Hey, it took " + startTime + " seconds to run.");
 	         		}
