@@ -170,6 +170,9 @@ public class XmlItemInputFormat extends TextInputFormat {
 					break;
 				}
 			}
+			
+			if (globalTagCursor >= lista.getLength())
+				globalTagCursor = 0;
 			return path;
 		}
 
