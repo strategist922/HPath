@@ -106,10 +106,7 @@ public class XmlItemInputFormat extends TextInputFormat {
 		}
 
 		/**
-		 * TODO: The fisrt line must be the xml item path -
-		 * /item01/item02/item03 This path will be used to compare the items in
-		 * map functions
-		 * 
+		 *
 		 * @param key
 		 * @param value
 		 * @return
