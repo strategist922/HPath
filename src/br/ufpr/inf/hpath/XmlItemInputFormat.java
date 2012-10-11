@@ -115,8 +115,8 @@ public class XmlItemInputFormat extends TextInputFormat {
 		 * @throws SAXException 
 		 */
 		private boolean next(LongWritable key, Text value) throws IOException, SAXException, ParserConfigurationException {
-			buffer.writeBytes(tagPath(startTag));
-			buffer.writeBytes("\t");
+			//buffer.writeBytes(tagPath(startTag));
+			//buffer.writeBytes("\t");
 			if (fsin.getPos() < end && readUntilMatch(startTag, false)) {
 				try {
 					buffer.write(startTag);
@@ -132,10 +132,12 @@ public class XmlItemInputFormat extends TextInputFormat {
 			return false;
 		}
 
+		@SuppressWarnings("unused")
 		private String tagPath(byte[] startTag) {
 			Document doc = null;
 			Element tagElement;
 			File f = new File(file.toUri().getPath());
+			
 			try {
 		           DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 		           DocumentBuilder docBuilder = dbf.newDocumentBuilder();

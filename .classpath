@@ -2,5 +2,19 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="/Users/Edson/Documents/Repositories/Mahout/core/target/mahout-core-0.8-SNAPSHOT-job.jar"/>
+	<classpathentry kind="lib" path="/Users/Edson/Documents/Repositories/Mahout/core/target/mahout-core-0.8-SNAPSHOT-sources.jar"/>
+	<classpathentry kind="lib" path="/Users/Edson/Documents/Repositories/Mahout/core/target/mahout-core-0.8-SNAPSHOT-tests.jar"/>
+	<classpathentry kind="lib" path="/Users/Edson/Documents/Repositories/Mahout/core/target/mahout-core-0.8-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="/Users/Edson/Documents/Repositories/hadoop-0.22.0/hadoop-common-0.22.0.jar" sourcepath="/Users/Edson/Documents/Repositories/hadoop-0.22.0/common"/>
+	<classpathentry kind="lib" path="/Users/Edson/Documents/Repositories/hadoop-0.22.0/hadoop-hdfs-0.22.0-sources.jar"/>
+	<classpathentry kind="lib" path="/Users/Edson/Documents/Repositories/hadoop-0.22.0/hadoop-hdfs-0.22.0.jar" sourcepath="/Users/Edson/Documents/Repositories/hadoop-0.22.0/hdfs"/>
+	<classpathentry kind="lib" path="/Users/Edson/Documents/Repositories/hadoop-0.22.0/hadoop-mapred-0.22.0-sources.jar"/>
+	<classpathentry kind="lib" path="/Users/Edson/Documents/Repositories/hadoop-0.22.0/hadoop-mapred-0.22.0.jar" sourcepath="/Users/Edson/Documents/Repositories/hadoop-0.22.0/mapreduce"/>
+	<classpathentry kind="lib" path="/Users/Edson/Documents/Repositories/hadoop-0.22.0/lib/log4j-1.2.16.jar"/>
+	<classpathentry kind="lib" path="/Users/Edson/Documents/Repositories/hadoop-0.22.0/lib/avro-1.5.3.jar"/>
+	<classpathentry kind="lib" path="/Users/Edson/Documents/Repositories/Mahout/examples/target/mahout-examples-0.8-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="/Users/Edson/Documents/Repositories/Mahout/integration/target/mahout-integration-0.8-SNAPSHOT.jar" sourcepath="/Mahout/integration"/>
+	<classpathentry kind="lib" path="/Users/Edson/Documents/Repositories/Mahout/integration/target/mahout-integration-0.8-SNAPSHOT-sources.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
